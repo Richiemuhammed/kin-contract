@@ -94,7 +94,7 @@ Add this to your Vercel project settings or `vercel.json`:
 
 If you prefer SSH, you can add a deploy key to Vercel:
 
-1. Generate SSH key (see [DEPLOY_KEY_SETUP.md](./DEPLOY_KEY_SETUP.md))
+1. Generate SSH key (see [deploy-key-setup.md](./deploy-key-setup.md))
 2. Add public key to GitHub (Settings → Deploy keys)
 3. Add private key to Vercel as environment variable: `SSH_PRIVATE_KEY`
 4. Configure Vercel to use SSH key in build
