@@ -26,7 +26,7 @@ Remove the old workspace dependency and add the Git dependency:
 
 **After (pinned to specific commit - REQUIRED):**
 
-**HTTPS (Recommended - works immediately, no setup needed):**
+**HTTPS (Recommended - works with Vercel/CI/CD):**
 ```json
 {
   "dependencies": {
@@ -35,7 +35,7 @@ Remove the old workspace dependency and add the Git dependency:
 }
 ```
 
-**SSH (Alternative - requires SSH key setup):**
+**SSH (Local development only - doesn't work in Vercel):**
 ```json
 {
   "dependencies": {
@@ -43,6 +43,8 @@ Remove the old workspace dependency and add the Git dependency:
   }
 }
 ```
+
+⚠️ **For Vercel/CI/CD:** You MUST use HTTPS and configure a GitHub token. See [VERCEL_SETUP.md](./VERCEL_SETUP.md) for detailed instructions.
 
 **Note:** The commit hash (`8d7772a...`) pins to v1.0.1 which includes the OpenAPI dependency fix. **Always pin to a specific commit in production** to avoid silent changes.
 
