@@ -24,11 +24,11 @@ Remove the old workspace dependency and add the Git dependency:
 }
 ```
 
-**After:**
+**After (pinned to specific commit - REQUIRED):**
 ```json
 {
   "dependencies": {
-    "@kin/contract": "git+ssh://git@github.com/Richiemuhammed/kin-contract.git"
+    "@kin/contract": "git+ssh://git@github.com/Richiemuhammed/kin-contract.git#8d7772a527eb89e68d7811da92ae872b307f3874"
   }
 }
 ```
@@ -37,10 +37,12 @@ Or if using HTTPS:
 ```json
 {
   "dependencies": {
-    "@kin/contract": "git+https://github.com/Richiemuhammed/kin-contract.git"
+    "@kin/contract": "git+https://github.com/Richiemuhammed/kin-contract.git#8d7772a527eb89e68d7811da92ae872b307f3874"
   }
 }
 ```
+
+**Note:** The commit hash (`8d7772a...`) pins to v1.0.1 which includes the OpenAPI dependency fix. **Always pin to a specific commit in production** to avoid silent changes.
 
 ## Step 2: Install Dependencies
 
@@ -213,28 +215,30 @@ npm rebuild @kin/contract
 - The first install builds the package, subsequent installs are faster
 - Consider pre-building and committing the built package (not recommended)
 
-## Version Pinning (Recommended for Production)
+## Version Pinning (REQUIRED for Production)
 
-To pin to a specific commit for stability:
+**Always pin to a specific commit hash** to ensure reproducible builds and avoid silent contract changes.
 
+Current recommended commit (v1.0.1 with OpenAPI fix):
 ```json
 {
   "dependencies": {
-    "@kin/contract": "git+ssh://git@github.com/Richiemuhammed/kin-contract.git#commit-hash"
+    "@kin/contract": "git+ssh://git@github.com/Richiemuhammed/kin-contract.git#8d7772a527eb89e68d7811da92ae872b307f3874"
   }
 }
 ```
 
-Or for a tag:
-```json
-{
-  "dependencies": {
-    "@kin/contract": "git+ssh://git@github.com/Richiemuhammed/kin-contract.git#v1.0.0"
-  }
-}
+To get the latest commit hash:
+```bash
+git ls-remote https://github.com/Richiemuhammed/kin-contract.git HEAD | cut -f1
 ```
 
-**Best Practice:** Pin to a specific commit or tag in production to avoid unexpected changes.
+**Why pin?**
+- ✅ Reproducible builds (same code every time)
+- ✅ No silent contract changes on reinstall
+- ✅ Safer releases (explicit version control)
+- ✅ Easier debugging (know exactly which version you're using)
+- ✅ Prevents production breakage from unexpected contract updates
 
 ## What Changed?
 
