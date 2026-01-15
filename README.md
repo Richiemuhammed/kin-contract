@@ -4,10 +4,10 @@ Shared API contract package between Kin backend and frontend. This package provi
 
 ## 🚀 Quick Links
 
-- **[WHAT_TO_DO.md](./WHAT_TO_DO.md)** - Action guide: what's done, what's next
-- **[QUICK_START.md](./QUICK_START.md)** - Fast setup instructions
-- **[MIGRATION_FRONTEND.md](./MIGRATION_FRONTEND.md)** - Frontend migration guide
-- **[MIGRATION_BACKEND.md](./MIGRATION_BACKEND.md)** - Backend migration guide
+- **[what-to-do.md](./what-to-do.md)** - Action guide: what's done, what's next
+- **[quick-start.md](./quick-start.md)** - Fast setup instructions
+- **[migration-frontend.md](./migration-frontend.md)** - Frontend migration guide
+- **[migration-backend.md](./migration-backend.md)** - Backend migration guide
 
 ## Installation
 

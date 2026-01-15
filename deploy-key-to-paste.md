@@ -32,14 +32,14 @@ This deploy key allows CI/CD systems (like GitHub Actions, Vercel, Netlify) to:
 🔒 **Keep the PRIVATE key secret:**
 - Location: `~/.ssh/kin-contract-deploy-key` (on the machine where you generated it)
 - Never commit it to git
-- Add it as a secret in your CI/CD system (see DEPLOY_KEY_SETUP.md)
+- Add it as a secret in your CI/CD system (see deploy-key-setup.md)
 
 ## Next Steps
 
 After adding the deploy key to GitHub:
 
 1. **For GitHub Actions:** Add the private key as a secret named `KIN_CONTRACT_DEPLOY_KEY`
-2. **For other CI/CD:** See DEPLOY_KEY_SETUP.md for instructions
+2. **For other CI/CD:** See deploy-key-setup.md for instructions
 
 ---
 

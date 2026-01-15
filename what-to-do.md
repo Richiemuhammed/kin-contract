@@ -58,7 +58,7 @@ This guide provides a clear roadmap for completing the `@kin/contract` package s
    - Ensure CI has access to GitHub (HTTPS with token or SSH key)
    - Don't use `--production` flag (package needs devDependencies to build)
 
-**📖 Detailed guide:** See [MIGRATION_FRONTEND.md](./MIGRATION_FRONTEND.md)
+**📖 Detailed guide:** See [migration-frontend.md](./migration-frontend.md)
 
 ---
 
@@ -141,7 +141,7 @@ test('GET /api/asks matches contract', async () => {
 **Best Practice:**
 - Create a tag for each version: `git tag v1.0.1`
 - Use tags in production: `#v1.0.1` instead of commit hash
-- Document breaking changes in `CHANGELOG.md`
+- Document breaking changes in `changelog.md`
 
 ---
 
@@ -221,11 +221,11 @@ Add contract validation to CI/CD pipelines:
 
 ## 📚 Reference Documents
 
-- **[QUICK_START.md](./QUICK_START.md)** - Quick copy-paste dependency
-- **[MIGRATION_FRONTEND.md](./MIGRATION_FRONTEND.md)** - Detailed frontend migration
-- **[MIGRATION_BACKEND.md](./MIGRATION_BACKEND.md)** - Detailed backend migration
+- **[quick-start.md](./quick-start.md)** - Quick copy-paste dependency
+- **[migration-frontend.md](./migration-frontend.md)** - Detailed frontend migration
+- **[migration-backend.md](./migration-backend.md)** - Detailed backend migration
 - **[README.md](./README.md)** - Full package documentation
-- **[CHANGELOG.md](./CHANGELOG.md)** - Version history
+- **[changelog.md](./changelog.md)** - Version history
 
 ---
 
@@ -248,7 +248,7 @@ Add contract validation to CI/CD pipelines:
 2. **Test after every contract update** - Ensure nothing breaks
 3. **Use contract types everywhere** - Maximize type safety
 4. **Validate at runtime** - Use Zod schemas for runtime validation
-5. **Document breaking changes** - Update CHANGELOG.md
+5. **Document breaking changes** - Update changelog.md
 
 ---
 
@@ -259,9 +259,9 @@ If you're setting up CI/CD, you'll need a deploy key for the private repository:
 **Quick Setup:**
 1. Generate SSH key: `ssh-keygen -t ed25519 -C "deploy" -f ~/.ssh/deploy-key -N ""`
 2. Add public key to GitHub: Repository → Settings → Deploy keys → Add deploy key
-3. Add private key to CI secrets (see [DEPLOY_KEY_SETUP.md](./DEPLOY_KEY_SETUP.md))
+3. Add private key to CI secrets (see [deploy-key-setup.md](./deploy-key-setup.md))
 
-**📖 Full guide:** See [DEPLOY_KEY_SETUP.md](./DEPLOY_KEY_SETUP.md) for detailed instructions
+**📖 Full guide:** See [deploy-key-setup.md](./deploy-key-setup.md) for detailed instructions
 
 ## 🆘 Need Help?
 
@@ -270,7 +270,7 @@ If you're setting up CI/CD, you'll need a deploy key for the private repository:
 3. Ensure `npm install` completes without errors
 4. Check that `node_modules/@kin/contract/dist/` exists
 5. Review the [README.md](./README.md) for usage examples
-6. **CI/CD issues?** See [DEPLOY_KEY_SETUP.md](./DEPLOY_KEY_SETUP.md)
+6. **CI/CD issues?** See [deploy-key-setup.md](./deploy-key-setup.md)
 
 ---
 

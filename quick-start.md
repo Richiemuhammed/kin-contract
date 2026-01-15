@@ -66,12 +66,33 @@ npm install
 
 ## Next Steps
 
-1. **Frontend:** Update `package.json` and install (see MIGRATION_FRONTEND.md)
+1. **Frontend:** Update `package.json` and install (see migration-frontend.md)
 2. **Backend:** ✅ Already done!
 3. **Both:** Start using contract types and schemas in your code
 
+## SSH vs HTTPS
+
+**HTTPS (Recommended):**
+- ✅ Works immediately, no setup needed
+- ✅ Works in CI/CD with personal access tokens
+- ✅ No SSH key configuration required
+- ⚠️ May prompt for GitHub credentials (use personal access token)
+
+**SSH (Alternative):**
+- ✅ No credential prompts once set up
+- ✅ More secure for automated systems
+- ⚠️ Requires SSH key setup on GitHub
+- ⚠️ Need to configure SSH keys first
+
+**Setting up SSH (optional):**
+1. Generate SSH key: `ssh-keygen -t ed25519 -C "your_email@example.com"`
+2. Add to ssh-agent: `ssh-add ~/.ssh/id_ed25519`
+3. Copy public key: `cat ~/.ssh/id_ed25519.pub`
+4. Add to GitHub: Settings → SSH and GPG keys → New SSH key
+
 ## Need Help?
 
-- See [MIGRATION_FRONTEND.md](./MIGRATION_FRONTEND.md) for detailed frontend instructions
-- See [MIGRATION_BACKEND.md](./MIGRATION_BACKEND.md) for detailed backend instructions
+- See [migration-frontend.md](./migration-frontend.md) for detailed frontend instructions
+- See [migration-backend.md](./migration-backend.md) for detailed backend instructions
 - See [README.md](./README.md) for usage examples
+- **SSH issues?** Use HTTPS instead - it works the same way!
