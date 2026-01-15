@@ -252,6 +252,17 @@ Add contract validation to CI/CD pipelines:
 
 ---
 
+## 🔑 CI/CD Setup (Important!)
+
+If you're setting up CI/CD, you'll need a deploy key for the private repository:
+
+**Quick Setup:**
+1. Generate SSH key: `ssh-keygen -t ed25519 -C "deploy" -f ~/.ssh/deploy-key -N ""`
+2. Add public key to GitHub: Repository → Settings → Deploy keys → Add deploy key
+3. Add private key to CI secrets (see [DEPLOY_KEY_SETUP.md](./DEPLOY_KEY_SETUP.md))
+
+**📖 Full guide:** See [DEPLOY_KEY_SETUP.md](./DEPLOY_KEY_SETUP.md) for detailed instructions
+
 ## 🆘 Need Help?
 
 1. Check the troubleshooting sections in migration guides
@@ -259,6 +270,7 @@ Add contract validation to CI/CD pipelines:
 3. Ensure `npm install` completes without errors
 4. Check that `node_modules/@kin/contract/dist/` exists
 5. Review the [README.md](./README.md) for usage examples
+6. **CI/CD issues?** See [DEPLOY_KEY_SETUP.md](./DEPLOY_KEY_SETUP.md)
 
 ---
 
