@@ -1,0 +1,53 @@
+# Naming Conventions
+
+## File and Folder Names
+
+**Use kebab-case for all file and folder names.**
+
+### Examples
+
+✅ **Correct:**
+- `user-profile.ts`
+- `api-client.ts`
+- `error-handler.ts`
+- `migration-guide.md`
+- `deploy-key-setup.md`
+
+❌ **Incorrect:**
+- `userProfile.ts` (camelCase)
+- `UserProfile.ts` (PascalCase)
+- `user_profile.ts` (snake_case)
+
+### Rules
+
+1. **Files:** Always use kebab-case
+   - TypeScript: `my-component.ts`, `api-client.tsx`
+   - Markdown: `migration-guide.md`
+   - Config files: `package.json`, `tsconfig.json` (standard names are fine)
+
+2. **Folders:** Always use kebab-case
+   - `src/components/`, `src/utils/`, `src/api-routes/`
+
+3. **When Creating New Files:**
+   - Components: `user-settings.tsx`
+   - Utilities: `format-date.ts`
+   - Types: `api-response.ts`
+   - Hooks: `use-api-data.ts`
+   - Tests: `user-settings.test.ts`
+
+## Variable and Function Names
+
+**Use camelCase:**
+- `const userName = 'John'`
+- `function getUserProfile() {}`
+
+## Class and Component Names
+
+**Use PascalCase:**
+- `class ApiClient {}`
+- `function UserProfile() {}`
+
+## Constants
+
+**Use SCREAMING_SNAKE_CASE:**
+- `const API_BASE_URL = 'https://api.example.com'`
