@@ -2,6 +2,16 @@
 
 ## For Frontend (kin)
 
+**Recommended: HTTPS** (works immediately, no setup needed)
+```json
+{
+  "dependencies": {
+    "@kin/contract": "git+https://github.com/Richiemuhammed/kin-contract.git#8d7772a527eb89e68d7811da92ae872b307f3874"
+  }
+}
+```
+
+**Alternative: SSH** (requires SSH key setup)
 ```json
 {
   "dependencies": {
@@ -17,6 +27,16 @@ npm install
 
 ## For Backend (kin-backend)
 
+**Recommended: HTTPS** (works immediately, no setup needed)
+```json
+{
+  "dependencies": {
+    "@kin/contract": "git+https://github.com/Richiemuhammed/kin-contract.git#8d7772a527eb89e68d7811da92ae872b307f3874"
+  }
+}
+```
+
+**Alternative: SSH** (requires SSH key setup)
 ```json
 {
   "dependencies": {

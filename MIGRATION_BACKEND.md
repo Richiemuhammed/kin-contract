@@ -25,15 +25,8 @@ Remove the old workspace dependency and add the Git dependency:
 ```
 
 **After (pinned to specific commit - REQUIRED):**
-```json
-{
-  "dependencies": {
-    "@kin/contract": "git+ssh://git@github.com/Richiemuhammed/kin-contract.git#8d7772a527eb89e68d7811da92ae872b307f3874"
-  }
-}
-```
 
-Or if using HTTPS:
+**HTTPS (Recommended - works immediately, no setup needed):**
 ```json
 {
   "dependencies": {
@@ -42,7 +35,18 @@ Or if using HTTPS:
 }
 ```
 
+**SSH (Alternative - requires SSH key setup):**
+```json
+{
+  "dependencies": {
+    "@kin/contract": "git+ssh://git@github.com/Richiemuhammed/kin-contract.git#8d7772a527eb89e68d7811da92ae872b307f3874"
+  }
+}
+```
+
 **Note:** The commit hash (`8d7772a...`) pins to v1.0.1 which includes the OpenAPI dependency fix. **Always pin to a specific commit in production** to avoid silent changes.
+
+**💡 Tip:** If you see "no public SSH keys" error, use HTTPS instead - it works the same way!
 
 ## Step 2: Install Dependencies
 
@@ -178,12 +182,20 @@ console.log(JSON.stringify(spec, null, 2));
 
 ## Troubleshooting
 
-### Issue: "Host key verification failed"
+### Issue: "Host key verification failed" or "no public SSH keys"
 
-**Solution:** Use HTTPS instead of SSH, or configure SSH keys:
+**Solution:** Use HTTPS instead of SSH (recommended):
 ```json
-"@kin/contract": "git+https://github.com/Richiemuhammed/kin-contract.git"
+"@kin/contract": "git+https://github.com/Richiemuhammed/kin-contract.git#8d7772a527eb89e68d7811da92ae872b307f3874"
 ```
+
+HTTPS works immediately without any SSH key setup. If prompted for credentials, use a GitHub personal access token instead of your password.
+
+**To set up SSH (optional):**
+1. Generate SSH key: `ssh-keygen -t ed25519 -C "your_email@example.com"`
+2. Add to ssh-agent: `ssh-add ~/.ssh/id_ed25519`
+3. Copy public key: `cat ~/.ssh/id_ed25519.pub`
+4. Add to GitHub: Settings → SSH and GPG keys → New SSH key
 
 ### Issue: "Cannot find module '@kin/contract'"
 
@@ -220,6 +232,17 @@ npm rebuild @kin/contract
 **Always pin to a specific commit hash** to ensure reproducible builds and avoid silent contract changes.
 
 Current recommended commit (v1.0.1 with OpenAPI fix):
+
+**HTTPS (Recommended):**
+```json
+{
+  "dependencies": {
+    "@kin/contract": "git+https://github.com/Richiemuhammed/kin-contract.git#8d7772a527eb89e68d7811da92ae872b307f3874"
+  }
+}
+```
+
+**SSH (Alternative):**
 ```json
 {
   "dependencies": {

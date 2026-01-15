@@ -4,22 +4,26 @@ Shared API contract package between Kin backend and frontend. This package provi
 
 ## Installation
 
-### From GitHub (SSH)
+### From GitHub (HTTPS - Recommended)
+
+**HTTPS works immediately, no setup needed:**
 
 ```json
 {
   "dependencies": {
-    "@kin/contract": "git+ssh://git@github.com/Richiemuhammed/kin-contract.git"
+    "@kin/contract": "git+https://github.com/Richiemuhammed/kin-contract.git#8d7772a527eb89e68d7811da92ae872b307f3874"
   }
 }
 ```
 
-### From GitHub (HTTPS)
+### From GitHub (SSH - Alternative)
+
+**SSH requires SSH key setup on GitHub:**
 
 ```json
 {
   "dependencies": {
-    "@kin/contract": "git+https://github.com/Richiemuhammed/kin-contract.git"
+    "@kin/contract": "git+ssh://git@github.com/Richiemuhammed/kin-contract.git#8d7772a527eb89e68d7811da92ae872b307f3874"
   }
 }
 ```
@@ -30,6 +34,14 @@ npm install
 ```
 
 The `prepare` script will automatically build the package on install.
+
+**💡 Tip:** If you see "no public SSH keys" error, use HTTPS instead - it works the same way!
+
+**Setting up SSH (optional):**
+1. Generate SSH key: `ssh-keygen -t ed25519 -C "your_email@example.com"`
+2. Add to ssh-agent: `ssh-add ~/.ssh/id_ed25519`
+3. Copy public key: `cat ~/.ssh/id_ed25519.pub`
+4. Add to GitHub: Settings → SSH and GPG keys → New SSH key
 
 ## Usage
 
