@@ -9,7 +9,7 @@ Shared API contract package between Kin backend and frontend. This package provi
 ```json
 {
   "dependencies": {
-    "@kin/contract": "git+ssh://git@github.com/YOUR_GITHUB_ORG/kin-contract.git"
+    "@kin/contract": "git+ssh://git@github.com/Richiemuhammed/kin-contract.git"
   }
 }
 ```
@@ -19,7 +19,7 @@ Shared API contract package between Kin backend and frontend. This package provi
 ```json
 {
   "dependencies": {
-    "@kin/contract": "git+https://github.com/YOUR_GITHUB_ORG/kin-contract.git"
+    "@kin/contract": "git+https://github.com/Richiemuhammed/kin-contract.git"
   }
 }
 ```
