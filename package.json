@@ -1,6 +1,6 @@
 {
   "name": "@kin/contract",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Shared API contract between Kin backend and frontend",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -14,13 +14,13 @@
     "generate:openapi": "tsx src/openapi.ts"
   },
   "dependencies": {
-    "zod": "^3.23.8"
+    "zod": "^3.23.8",
+    "@asteasolutions/zod-to-openapi": "^7.3.4"
   },
   "devDependencies": {
     "@types/node": "^20.14.0",
     "tsx": "^4.16.0",
-    "typescript": "^5.9.2",
-    "@asteasolutions/zod-to-openapi": "^7.3.4"
+    "typescript": "^5.9.2"
   },
   "private": true
 }
