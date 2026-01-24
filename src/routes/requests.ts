@@ -7,6 +7,8 @@ import {
   RequestApproveSchema,
   RequestRejectSchema,
   RequestStatusSchema,
+  RequestPrioritySchema,
+  RequestAmountTypeSchema,
 } from '../domain/request';
 
 /**
@@ -57,6 +59,16 @@ export type GetRequestResponse = z.infer<typeof GetRequestResponseSchema>;
 export const CreateRequestRequestSchema = RequestCreateSchema.extend({
   /** Idempotency key for safe retries */
   idempotency_key: z.string().min(1).optional(),
+  /** Priority (optional) */
+  priority: RequestPrioritySchema.optional(),
+  /** Amount type: fixed vs variable (optional) */
+  amount_type: RequestAmountTypeSchema.optional(),
+  /** Urgency (optional) */
+  urgency: z.string().optional(),
+  /** Frequency (optional) */
+  frequency: z.string().optional(),
+  /** Schedule (optional) */
+  schedule: z.unknown().optional(),
 });
 
 export type CreateRequestRequest = z.infer<typeof CreateRequestRequestSchema>;

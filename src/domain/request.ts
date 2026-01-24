@@ -1,12 +1,41 @@
 import { z } from 'zod';
-import { KinMemberSchema } from './kin-member';
 
 /**
- * Request status enum
+ * Request source — who created the obligation (owner-logged vs dependent-proposed)
  */
-export const RequestStatusSchema = z.enum(['pending', 'approved', 'paid', 'rejected']);
+export const RequestSourceSchema = z.enum(['owner', 'dependent']);
+
+export type RequestSource = z.infer<typeof RequestSourceSchema>;
+
+/**
+ * Request status enum (Responsibility Engine)
+ */
+export const RequestStatusSchema = z.enum([
+  'pending',
+  'approved',
+  'scheduled',
+  'processing',
+  'paid',
+  'failed',
+  'rejected',
+  'cancelled',
+]);
 
 export type RequestStatus = z.infer<typeof RequestStatusSchema>;
+
+/**
+ * Request priority
+ */
+export const RequestPrioritySchema = z.enum(['critical', 'high', 'normal', 'low']);
+
+export type RequestPriority = z.infer<typeof RequestPrioritySchema>;
+
+/**
+ * Request amount type
+ */
+export const RequestAmountTypeSchema = z.enum(['fixed', 'variable']);
+
+export type RequestAmountType = z.infer<typeof RequestAmountTypeSchema>;
 
 /**
  * Request schema
@@ -26,6 +55,8 @@ export const RequestSchema = z.object({
   amount_cents: z.number().int().positive(),
   /** Request status */
   status: RequestStatusSchema,
+  /** Who created the obligation (owner vs dependent) */
+  source: RequestSourceSchema,
   /** Optional description */
   description: z.string().nullable(),
   /** Optional due date */
@@ -34,6 +65,16 @@ export const RequestSchema = z.object({
   created_at: z.string().datetime(),
   /** Updated timestamp */
   updated_at: z.string().datetime(),
+  /** Priority (optional) */
+  priority: RequestPrioritySchema.optional(),
+  /** Amount type: fixed vs variable (optional) */
+  amount_type: RequestAmountTypeSchema.optional(),
+  /** Immutable payout copy at execution (optional) */
+  payout_snapshot: z.record(z.string(), z.unknown()).nullable().optional(),
+  /** Recurrence rule (optional) */
+  recurrence_rule: z.string().nullable().optional(),
+  /** Recurrence end datetime, ISO (optional) */
+  recurrence_end_at: z.string().datetime().nullable().optional(),
 });
 
 export type Request = z.infer<typeof RequestSchema>;
